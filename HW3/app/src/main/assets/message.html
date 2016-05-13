@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Message Input</title>
+    <script language="javascript">
+
+        function inputPhone(num){
+            var put = control.showText(document.getElementById("pText").value, num);
+            document.getElementById("pText").value = put;
+        }
+        function sendSMS(){
+            var phone_num = document.getElementById("pText").value;
+            var sms_content = document.getElementById("cText").value;
+            control.sendData(phone_num, sms_content);
+        }
+    </script>
+    <style type="text/css">
+        .textSize{
+        width:100px;
+        height:50px;
+        border:1;
+        }
+    </style>
+</head>
+
+<br>
+<p> Message number Input Button</p>
+<hr>
+<table style="width:350; height:270">
+    <tr>
+        <td><input type="button" value="1" id="num1" onclick="inputPhone(1)" class="textSize"></td>
+        <td><input type="button" value="2" id="num2" onclick="inputPhone(2)" class="textSize"></td>
+        <td><input type="button" value="3" id="num3" onclick="inputPhone(3)" class="textSize"></td>
+    <tr>
+        <td><input type="button" value="4" id="num4" onclick="inputPhone(4)" class="textSize"></td>
+        <td><input type="button" value="5" id="num5" onclick="inputPhone(5)" class="textSize"></td>
+        <td><input type="button" value="6" id="num6" onclick="inputPhone(6)" class="textSize"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" id="num7" onclick="inputPhone(7)" class="textSize"></td>
+        <td><input type="button" value="8" id="num8" onclick="inputPhone(8)" class="textSize"></td>
+        <td><input type="button" value="9" id="num9" onclick="inputPhone(9)" class="textSize"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="*" id="num*" onclick="inputPhone('*')" class="textSize"></td>
+        <td><input type="button" value="0" id="num0" onclick="inputPhone(0)" class="textSize"></td>
+        <td><input type="button" value="#" id="num#" onclick="inputPhone('#')" class="textSize"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="C" id="clear" onclick="inputPhone('c')" class="textSize"></td>
+        <td colspan="2"></td>
+    </tr>
+</table>
+<hr>
+<p>Phone Number <input type="text" id="pText" placeholder="Input phone number" readonly/></p>
+<hr>
+<p>Message Content</br>
+<textarea  rows="7" cols="50" id="cText"></textarea></p>
+<hr>
+<p><input type="button" value="Send!" id="sendbtn" onclick="sendSMS()" class="textSize"></p>
+</body>
+
+</html>
